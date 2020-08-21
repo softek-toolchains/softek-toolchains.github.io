@@ -1,0 +1,84 @@
+body {
+    margin: 60px auto;
+    width: 800px;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+nav ul, footer ul {
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+a {
+    text-decoration: none;
+    color: #999;
+}
+a:hover {
+    text-decoration: underline;
+}
+h1 {
+    font-size: 48px;
+}
+p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #333;
+}
+p.small {
+    font-size: 14px;
+    color: #999;
+}
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+}
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+}
+ul.posts li {
+    list-style: none;
+}
+ul.blog, ol.blog { 
+    margin: 32px auto 32px; 
+    font-size: 18px;
+    line-height: 30px;
+    color: #333;
+}
+hr.devider {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    font-size: 24px;
+    text-align: center;
+    border: none;
+}
+.devider:before {
+    content: "...";
+    letter-spacing: 0.6em;
+    text-indent: 0.6em;
+    line-height: 30px;
+}
+iframe {
+    margin: 16px auto 16px;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+tr:nth-child(even) {
+  background-color: #dddd;
+}
+@media (max-width: 375px) {
+h1 {
+    font-size: 32px;
+}
+p {
+    font-size: 16px;
+    line-height: 26px;
+}
+}
