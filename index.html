@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta name="robots" content="noindex, nofollow">
+			<title>Buildbot Numbers: May – June 2020</title>
+		</head>
+		<body>
+			<div class="container">
+			
+<h1>Buildbot Numbers: May – June 2020</h1>
+<p class="meta">15 Aug 2020</p>
+
+<div class="post">
+<p>Hello everyone,</p>
+<p>Here, at <b>Access Softek Toolchains</b> we collect buildbot numbers we think the LLVM community would be interested to check.</p>
+<p>In this report we’d like to share the following stats:</p>
+<ol class="blog">
+<li>The longest time each builder was red during the week;</li>
+<li>"Status change ratio" by active builder (percent of builds that changed the builder status from green to red or from red to green);</li>
+<li>Number of commits by project;</li>
+<li>Number of completed builds, failed builds and average build time for successful builds per active builder;</li>
+<li>Average waiting time for a revision to get build result per active builder (response time).</li>
+</ol>
+<hr class="devider">
+<h3>Time Periods</h3>
+<p>To make it easy to compare the numbers, we pulled stats from equal monthly periods. In this report, we compare data in <b>May 2020</b> to <b>June 2020</b>. To be more precise, the dates are as follows:</p>
+<p><b>May 10, 2020 – June 6, 2020</b> (further in this report will be marked as <b>May 2020</b>)
+<b><i>VS</i></b>
+<b>June 7, 2020 – July 4, 2020</b> (further in this report will be marked as <b>June 2020</b>) </p>
+<hr class="devider">
+<h3>Raw Data</h3>
+<p>Feel free to download raw data in the .CSV format by clicking on the three dots in the top-right corner next to each chart you see below.</p>
+<hr class="devider">
+<h3>About Us</h3>
+<p>A few words about who we are and why we share these stats:</p>
+<p><b>Access Softek Toolchains</b> is an active contributor and a partner of the open technology ecosystem – the LLVM Project. We host the LLVM Lab in our office in Berkeley, California and manage the continued integration (LLVM buildbot) for all projects under the LLVM umbrella.</p>
+<p>We also help companies to drive adoption of the LLVM infrastructure and get the best possible software development tools. We have worked on a number of projects such as a front-end compiler, back-end code generation and optimization, linkers, code instrumentation, etc. for clients like Sony, Google and Nintendo.</p>
+<p>If you need help with developing, porting, representing and maintaining compiler toolchains based on Clang and LLVM, please <a href="mailto:clients@accesssoftek.com">drop us a line</a>. Also, please <a href="https://stast.github.io/about">see this page</a> for more details about our expertise.</p>
+<hr class="devider">
+<p><b>Feedback Wanted</b></p>
+<p>This is just a first report in a series we’ve planned ahead. We hope you’ll like the data and the way we’ve put it together.</p>
+<p>If you have any suggestions or ideas on how to improve the reports, or if there is other data you’d like to see in the coming reports, please <a href="mailto:statarin@accesssoftek.com">let us know</a>.</p>
+<p>Thank you,<br>Access Softek Toolchains Team</p>
+<hr class="devider">
+<h2>1. The Longest Time Each Builder <span style="color:#f44336">Was Red</span> During the Month</h2>
+<p class="small"><b>Period:</b> May 10, 2020 – June 6, 2020 (<b>May 2020</b>) <i>VS</i> June 7, 2020 – July 4, 2020 (<b>June 2020</b>)</p>
+<p class="small"><b>Format:</b> HH:MM:SS</p>
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/63f11397-f2e4-4ebe-95fe-86345ac88be8/page/xlgaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<hr class="devider">
+<p>As seen from the charts above, the longest time being red in May – June 2020 by far were the following builders:</p>
+
+<table style="width:100%">
+    <tr>
+<th>Builder Name</th>
+<th>Was <span style="color:#f44336">Red</span>, May 2020 (HH:MM:SS)</th>
+    </tr>
+    <tr>
+<td>llvm-sphinx-docs</td>
+<td>135:14:21</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux-noexceptions</td>
+<td>130:46:04</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux</td>
+<td>128:34:27</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux</td>
+<td>119:51:43</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux-noexceptions</td>
+<td>119:51:27</td>
+    </tr>
+    <tr>
+<td>clang-native-arm-lnt-perf</td>
+<td>115:00:42</td>
+    </tr>
+    <tr>
+<td>sanitizer-x86_64-linux</td>
+<td>109:51:18</td>
+    </tr>
+    <tr>
+<th>Builder Name</th>
+<th>Was <span style="color:#f44336">Red</span>, June 2020 (HH:MM:SS)</th>
+    </tr>
+    <tr>
+<td>llvm-clang-win-x-armv7</td>
+<td>139:09:35</td>
+    </tr>
+    <tr>
+<td>lld-x86_64-freebsd</td>
+<td>109:33:39</td>
+    </tr>
+    <tr>
+<td>sanitizer-x86_64-linux-android</td>
+<td>97:09:18</td>
+    </tr>
+    <tr>
+<td>mlir-nvidia</td>
+<td>96:23:08</td>
+    </tr>
+    <tr>
+<td>clang-cmake-thumbv7-full-sh</td>
+<td>86:10:53</td>
+    </tr>
+</table>
+
+<hr class="devider">
+<p>The least time being red during the same time period goes to the following builders:</p>
+
+<table style="width:100%">
+    <tr>
+<th>Builder Name</th>
+<th>Was <span style="color:#f44336">Red</span>, June 2020 (HH:MM:SS)</th>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-x86_64-linux-debian-noexceptions</td>
+<td>00:20:29</td>
+    </tr>
+    <tr>
+<td>libc-x86_64-debian</td>
+<td>00:49:26</td>
+    </tr>
+    <tr>
+<td>openmp-clang-x86_64-linux-debian</td>
+<td>00:58:35</td>
+    </tr>
+    <tr>
+<td>openmp-gcc-x86_64-linux-debian</td>
+<td>00:59:47</td>
+    </tr>
+    <tr>
+<td>clang-aarch64-linux-build-cache</td>
+<td>01:02:41</td>
+    </tr>
+    <tr>
+<td>lld-perf-testsuite</td>
+<td>01:03:20</td>
+    </tr>
+    <tr>
+<th>Builder Name</th>
+<th>Was <span style="color:#f44336">Red</span>, June 2020 (HH:MM:SS)</th>
+    </tr>
+    <tr>
+<td>lld-perf-testsuite</td>
+<td>01:32:57</td>
+    </tr>
+    <tr>
+<td>ml-opt-devrel-x86-64</td>
+<td>01:33:11</td>
+    </tr>
+    <tr>
+<td>openmp-clang-x86_64-linux-debian</td>
+<td>01:43:54</td>
+    </tr>
+    <tr>
+<td>clang-cmake-armv7-selfhost-neon</td>
+<td>02:01:02</td>
+    </tr>
+    <tr>
+<td>ml-opt-rel-x86-64</td>
+<td>02:35:30</td>
+    </tr>
+</table>
+
+<hr class="devider">
+<p>The largest shifts for the time a builder was red in June 2020 over May 2020 are:</p>
+
+<table style="width:100%">
+    <tr>
+<th>Builder Name</th>
+<th>Was <span style="color:#f44336">Red</span>, May 2020 (HH:MM:SS)</th>
+<th>Was <span style="color:#f44336">Red</span>, June 2020 (HH:MM:SS)</th>
+<th>Change (HH:MM:SS)</th>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux</td>
+<td>128:34:27</td>
+<td>16:43:02</td>
+<td>-111:51:25	<span style="color:#36F585">&#8595;</span></td>
+    </tr>
+    <tr>
+<td>clang-native-arm-lnt-perf</td>
+<td>115:00:42</td>
+<td>03:18:34</td>
+<td>-111:42:08 <span style="color:#36F585">&#8595;</span></td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux</td>
+<td>119:51:43</td>
+<td>14:10:40</td>
+<td>-105:41:03 <span style="color:#36F585">&#8595;</span></td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux-noexceptions</td>
+<td>130:46:04</td>
+<td>48:08:45</td>
+<td>-82:37:19	<span style="color:#36F585">&#8595;</span></td>
+    </tr>
+    <tr>
+<td>llvm-sphinx-docs</td>
+<td>135:14:21</td>
+<td>56:14:14</td>
+<td>-79:00:07	<span style="color:#36F585">&#8595;</span></td>
+    </tr>
+    <tr>
+<th>Builder Name</th>
+<th>Was <span style="color:#f44336">Red</span>, May 2020 (HH:MM:SS)</th>
+<th>Was <span style="color:#f44336">Red</span>, June 2020 (HH:MM:SS)</th>
+<th>Change (HH:MM:SS)</th>
+    </tr>
+    <tr>
+<td>lld-x86_64-freebsd</td>
+<td>03:27:43</td>
+<td>109:33:39</td>
+<td>+106:05:56	<span style="color:#f44336">&#8593;</span></td>
+    </tr>
+    <tr>
+<td>llvm-clang-win-x-armv7</td>
+<td>39:58:13</td>
+<td>139:09:35</td>
+<td>+99:11:22	 <span style="color:#f44336">&#8593;</span></td>
+    </tr>
+    <tr>
+<td>mlir-nvidia</td>
+<td>20:09:29</td>
+<td>55:48:49</td>
+<td>+76:13:39 <span style="color:#f44336">&#8593;</span></td>
+    </tr>
+    <tr>
+<td>sanitizer-x86_64-linux-android</td>
+<td>22:48:06</td>
+<td>97:09:18</td>
+<td>+74:21:12 <span style="color:#f44336">&#8593;</span></td>
+    </tr>
+    <tr>
+<td>clang-s390x-linux-multistage</td>
+<td>11:20:51</td>
+<td>81:56:32</td>
+<td>+70:35:41 <span style="color:#f44336">&#8593;</span></td>
+    </tr>
+</table>
+
+<hr class="devider">
+
+<h2>2. Status Change Ratio</h2>
+<p class="small">"Status change ratio" by active builder (percent of builds that changed the builder status from green to red or from red to green).</p>
+<p class="small"><b>Period:</b> May 10, 2020 – June 6, 2020 (<b>May 2020</b>) <i>VS</i> June 7, 2020 – July 4, 2020 (<b>June 2020</b>)</p>
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/9941d9f5-c597-4300-85a5-64bdbec8aea9/page/e7YaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/b7b280e8-b865-40fa-8ebe-a12f2b0135c6/page/bVaaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<hr class="devider">
+<p>The highest status change ratio in May – June 2020 had the following builders:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Builds</th>
+<th>Changes</th>
+<th>Status Change Ratio (%)</th>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux</td>
+<td>36</td>
+<td>10</td>
+<td>27.8</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux-noexceptions</td>
+<td>36</td>
+<td>10</td>
+<td>27.8</td>
+    </tr>
+    <tr>
+<td>sanitizer-x86_64-linux</td>
+<td>576</td>
+<td>137</td>
+<td>23.8</td>
+    </tr>
+    <tr>
+<td>clang-cmake-aarch64-lld</td>
+<td>302</td>
+<td>69</td>
+<td>22.8</td>
+    </tr>
+    <tr>
+<td>clang-x64-windows-msvc</td>
+<td>394</td>
+<td>90</td>
+<td>22.8</td>
+    </tr>
+    <tr>
+<th>Builder Name</th>
+<th>Builds</th>
+<th>Changes</th>
+<th>Status Change Ratio (%)</th>
+    </tr>
+    <tr>
+<td>clang-cmake-aarch64-full</td>
+<td>463</td>
+<td>139</td>
+<td>30</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux</td>
+<td>21</td>
+<td>5</td>
+<td>23.8</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux-noexceptions</td>
+<td>31</td>
+<td>7</td>
+<td>22.6</td>
+    </tr>
+    <tr>
+<td>libcxx-libcxxabi-libunwind-armv7-linux-noexceptions</td>
+<td>23</td>
+<td>5</td>
+<td>21.7</td>
+    </tr>
+    <tr>
+<td>clang-cmake-aarch64-lld</td>
+<td>363</td>
+<td>72</td>
+<td>19.8</td>
+    </tr>
+    <tr>
+<td>clang-x64-windows-msvc</td>
+<td>420</td>
+<td>83</td>
+<td>19.8</td>
+    </tr>
+</table>
+
+<hr class="devider">
+<p>The lowest status change ratio in May 2020 had exact same builders as in June 2020:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Builds</th>
+<th>Changes</th>
+<th>Status Change Ratio (%)</th>
+	</tr>
+	<tr>
+<td>lldb-sphinx-docs</td>
+<td>1642</td>
+<td>0</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>clang-sphinx-docs</td>
+<td>1499</td>
+<td>0</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx-sphinx-docs</td>
+<td>1284</td>
+<td>0</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>lld-sphinx-docs</td>
+<td>1268</td>
+<td>0</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libunwind-sphinx-docs</td>
+<td>1192</td>
+<td>0</td>
+<td>0</td>	
+	</tr>
+</table>
+
+<hr class="devider">
+<p>The largest shifts for the status change ratio in June over May 2020:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Status Change Ratio, May 2020 (%)</th>
+<th>Status Change Ratio, June 2020 (%)</th>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux <span style="color:#36F585">&#8595;</span></td>
+<td>20.3</td>
+<td>7.5</td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-selfhost-neon <span style="color:#36F585">&#8595;</span></td>
+<td>12.8</td>
+<td>1.2</td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-selfhost <span style="color:#36F585">&#8595;</span></td>
+<td>12</td>
+<td>1.5</td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-full <span style="color:#36F585">&#8595;</span></td>
+<td>13.8</td>
+<td>4</td>
+	</tr>
+	<tr>
+<td>sanitizer-x86_64-linux <span style="color:#36F585">&#8595;</span></td>
+<td>23.8</td>
+<td>14.2</td>
+	</tr>
+	<tr>
+<th>Builder Name</th>
+<th>Status Change Ratio, May 2020 (%)</th>
+<th>Status Change Ratio, June 2020 (%)</th>
+	</tr>
+	<tr>
+<td>clang-cmake-aarch64-full <span style="color:#f44336">&#8593;</span></td>
+<td>16.6</td>
+<td>30</td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-debian-noexceptions <span style="color:#f44336">&#8593;</span></td>
+<td>2.6</td>
+<td>9.7</td>
+	</tr>
+	<tr>
+<td>clang-ppc64be-linux-lnt <span style="color:#f44336">&#8593;</span></td>
+<td>10</td>
+<td>16.3</td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx14 <span style="color:#f44336">&#8593;</span></td>
+<td>0</td>
+<td>5.5</td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx17 <span style="color:#f44336">&#8593;</span></td>
+<td>0</td>
+<td>5.5</td>
+	</tr>
+</table>
+	
+<hr class="devider">	
+<h2>3. Number of Commits by Project</h2>
+<p class="small"><b>Period:</b> May 10, 2020 – June 6, 2020 (<b>May 2020</b>) <i>VS</i> June 7, 2020 – July 4, 2020 (<b>June 2020</b>)</p>
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/fd91868e-c60f-4cdf-a2d8-a532349c852e/page/kneaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<hr class="devider">
+<p>Changes of project commits in June compared to May 2020 (in percent):</p>
+
+<table style="width:100%">
+	<tr>
+<th>project</th>
+<th>Commits, May 2020</th>
+<th>Commits, June 2020</th>
+<th>Change (%)</th>
+	</tr>
+	<tr>
+<td>mlir</td>
+<td>0</td>
+<td>176</td>
+<td>+ &infin;</td>
+	</tr>
+	<tr>
+<td>flang</td>
+<td>0</td>
+<td>59</td>
+<td>+ &infin;</td>
+	</tr>
+	<tr>
+<td>libunwind</td>
+<td>2</td>
+<td>8</td>
+<td>+300</td>
+	</tr>
+	<tr>
+<td>libcxxabi</td>
+<td>7</td>
+<td>16</td>
+<td>+129</td>
+	</tr>
+	<tr>
+<td>openmp</td>
+<td>10</td>
+<td>18</td>
+<td>+80</td>
+	</tr>
+	<tr>
+<td>libc</td>
+<td>20</td>
+<td>31</td>
+<td>+55</td>
+	</tr>
+	<tr>
+<td>cfe</td>
+<td>437</td>
+<td>563</td>
+<td>+29</td>
+	</tr>
+	<tr>
+<td>clang-tools-extra</td>
+<td>81</td>
+<td>104</td>
+<td>+28</td>
+	</tr>
+	<tr>
+<td>llvm</td>
+<td>1523</td>
+<td>1595</td>
+<td>+5</td>
+	</tr>
+	<tr>
+<td>compiler-rt</td>
+<td>61</td>
+<td>61</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx</td>
+<td>74</td>
+<td>66</td>
+<td>-11</td>
+	</tr>
+	<tr>
+<td>lld</td>
+<td>77</td>
+<td>68</td>
+<td>-12</td>
+	</tr>
+	<tr>
+<td>lldb</td>
+<td>197</td>
+<td>172</td>
+<td>-13</td>
+	</tr>
+	<tr>
+<td>polly</td>
+<td>6</td>
+<td>3</td>
+<td>-50</td>
+	</tr>
+</table>
+
+<hr class="devider">
+<p>Share of each project in the overall number of commits during the observed period:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Project</th>
+<th>% of Total Commits, May 2020</th>
+<th>% of Total Commits, June 2020</th>
+	</tr>
+	<tr>
+<td>llvm</td>
+<td>61</td>
+<td>54.3</td>
+	</tr>
+	<tr>
+<td>cfe</td>
+<td>17.5</td>
+<td>19.1</td>
+	</tr>
+	<tr>
+<td>mlir</td>
+<td>0</td>
+<td>6</td>
+	</tr>
+	<tr>
+<td>lldb</td>
+<td>7.9</td>
+<td>5.9</td>
+	</tr>
+	<tr>
+<td>clang-tools-extra</td>
+<td>3.2</td>
+<td>3.5</td>
+	</tr>
+	<tr>
+<td>lld</td>
+<td>3.1</td>
+<td>2.3</td>
+	</tr>
+	<tr>
+<td>libcxx</td>
+<td>3</td>
+<td>2.2</td>
+	</tr>
+	<tr>
+<td>compiler-rt</td>
+<td>2.4</td>
+<td>2.1</td>
+	</tr>
+	<tr>
+<td>flang</td>
+<td>0</td>
+<td>2</td>
+	</tr>
+	<tr>
+<td>libc</td>
+<td>0.8</td>
+<td>1.1</td>
+	</tr>
+	<tr>
+<td>openmp</td>
+<td>0.4</td>
+<td>0.6</td>
+	</tr>
+	<tr>
+<td>libcxxabi</td>
+<td>0.3</td>
+<td>0.5</td>
+	</tr>
+	<tr>
+<td>libunwind</td>
+<td>0.1</td>
+<td>0.3</td>
+	</tr>
+	<tr>
+<td>polly</td>
+<td>0.2</td>
+<td>0.1</td>
+	</tr>
+</table>
+
+<hr class="devider">
+<h2>4. Number of Completed Builds, Failed Builds and Average Build Time for
+Successful Builds Per Active Builder</h2>
+<p class="small"><b>Period:</b> May 10, 2020 – June 6, 2020 (<b>May 2020</b>) <i>VS</i> June 7, 2020 – July 4, 2020 (<b>June 2020</b>)</p>
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/361bfc42-2b01-40f8-ba24-7ddc44f25c86/page/T8aaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<hr class="devider">
+<p>The following builders had the largest ratio of the <span style="color:#f44336">failed</span> builds during May – June 2020:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>All Builds, May 2020</th>
+<th>Red Builds, May 2020</th>
+<th>% of <span style="color:#f44336">Red</span> Builds, May 2020</th>
+	</tr>
+	<tr>
+<td>clang-cmake-x86_64-avx2-linux-perf</td>
+<td>621</td>
+<td>621</td>
+<td>100</td>
+	</tr>
+	<tr>
+<td>clang-sphinx-docs</td>
+<td>1499</td>
+<td>1499</td>
+<td>100</td>
+	</tr>
+	<tr>
+<td>lld-sphinx-docs</td>
+<td>1268</td>
+<td>1268</td>
+<td>100</td>
+	</tr>
+	<tr>
+<td>clang-hexagon-elf</td>
+<td>317</td>
+<td>316</td>
+<td>99.7</td>
+	</tr>
+	<tr>
+<td>reverse-iteration</td>
+<td>351</td>
+<td>349</td>
+<td>99.4</td>
+	</tr>
+	<tr>
+<td>clang-x64-ninja-win7</td>
+<td>247</td>
+<td>233</td>
+<td>94.3</td>
+	</tr>
+	<tr>
+<td>llvm-sphinx-docs</td>
+<td>1217</td>
+<td>1073</td>
+<td>88.2</td>
+	</tr>
+	<tr>
+<th>Builder Name</th>
+<th>All Builds, June 2020</th>
+<th>Red Builds, June 2020</th>
+<th>% of <span style="color:#f44336">Red</span> Builds, June 2020</th>
+	</tr>
+	<tr>
+<td>clang-hexagon-elf</td>
+<td>308</td>
+<td>308</td>
+<td>100</td>
+	</tr>
+	<tr>
+<td>clang-sphinx-docs</td>
+<td>1542</td>
+<td>1542</td>
+<td>100</td>
+	</tr>
+	<tr>
+<td>lld-sphinx-docs</td>
+<td>1291</td>
+<td>1291</td>
+<td>100</td>
+	</tr>
+	<tr>
+<td>lld-x86_64-freebsd</td>
+<td>502</td>
+<td>501</td>
+<td>99.8</td>
+	</tr>
+	<tr>
+<td>reverse-iteration</td>
+<td>347</td>
+<td>346</td>
+<td>99.7</td>
+	</tr>
+	<tr>
+<td>clang-cmake-x86_64-avx2-linux-perf</td>
+<td>617</td>
+<td>615</td>
+<td>99.7</td>
+	</tr>
+	<tr>
+<td>clang-x64-ninja-win7</td>
+<td>267</td>
+<td>259</td>
+<td>97</td>
+	</tr>
+	<tr>
+<td>llvm-sphinx-docs</td>
+<td>1247</td>
+<td>1178</td>
+<td>94.5</td>	
+	</tr>
+</table>
+
+<hr class="devider">
+<p>The following builders had no failed builds during the observed period:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>All Builds, May 2020</th>
+<th>Red Builds, May 2020</th>
+	</tr>
+	<tr>
+<td>lldb-sphinx-docs</td>
+<td>1642</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx-sphinx-docs</td>
+<td>1284</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libunwind-sphinx-docs</td>
+<td>1192</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-gcc-tot-latest-std</td>
+<td>75</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx14</td>
+<td>65</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx17</td>
+<td>63</td>
+<td>0</td>
+	</tr>
+	<tr>
+<th>Builder Name</th>
+<th>All Builds, June 2020</th>
+<th>Red Builds, June 2020</th>
+	</tr>
+	<tr>
+<td>lldb-sphinx-docs</td>
+<td>1664</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libcxx-sphinx-docs</td>
+<td>1297</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>libunwind-sphinx-docs</td>
+<td>1244</td>
+<td>0</td>
+	</tr>
+	<tr>
+<td>clang-aarch64-linux-build-cache</td>
+<td>1212</td>
+<td>0</td>
+	</tr>
+</table>
+
+<hr class="devider">
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/748ad9c3-2292-49a8-8bf5-172d715ebe7a/page/dIbaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<hr class="devider">
+<p>The following builders had the highest increase in average build time in June compared to May 2020:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Avg Build Time, May 2020</th>
+<th>Avg Build Time, June 2020</th>
+<th>Change (%)</th>
+	</tr>
+	<tr>
+<td>sanitizer-windows</td>
+<td>00:06:04</td>
+<td>00:09:24</td>
+<td>+54.9 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx03</td>
+<td>00:06:04</td>
+<td>00:07:47</td>
+<td>+28.3 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx14</td>
+<td>00:07:30</td>
+<td>00:08:37</td>
+<td>+14.9 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>clang-ppc64be-linux-multistage</td>
+<td>00:54:27</td>
+<td>01:02:07</td>
+<td>+14.1 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>clang-ppc64be-linux-lnt</td>
+<td>00:27:50</td>
+<td>00:31:40</td>
+<td>+13.8 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libc-x86_64-debian-dbg</td>
+<td>00:02:19</td>
+<td>00:02:38</td>
+<td>+13.7 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-x86_64-linux-ubuntu-cxx11</td>
+<td>00:07:15</td>
+<td>00:08:13</td>
+<td>+13.3 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+</table>
+
+<hr class="devider">
+<p>Average built time reduced significantly for the following builders:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Avg Build Time, May 2020</th>
+<th>Avg Build Time, June 2020</th>
+<th>Change (%)</th>
+	</tr>
+	<tr>
+<td>clang-tools-sphinx-docs</td>
+<td>00:00:44</td>
+<td>00:00:14</td>
+<td>-68.2<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-global-isel</td>
+<td>02:06:22</td>
+<td>00:55:39</td>
+<td>-56<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>lld-x86_64-freebsd</td>
+<td>00:32:02</td>
+<td>00:14:12</td>
+<td>-55.7<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-aarch64-global-isel</td>
+<td>01:52:19</td>
+<td>00:51:30</td>
+<td>-54.1<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-lnt</td>
+<td>01:24:50</td>
+<td>00:39:27</td>
+<td>-53.5<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-selfhost</td>
+<td>01:17:53</td>
+<td>00:39:56</td>
+<td>-48.7<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv8-lld</td>
+<td>02:49:56</td>
+<td>01:28:55</td>
+<td>-47.7<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-selfhost-neon</td>
+<td>01:17:34</td>
+<td>00:41:15</td>
+<td>-46.8<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-aarch64-lld</td>
+<td>03:22:45</td>
+<td>01:51:17</td>
+<td>-45.1<span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-quick</td>
+<td>00:25:16</td>
+<td>00:15:01</td>
+<td>-40.6<span style="color:#36F585">&#8595;</span></td>		
+	</tr>
+</table>
+
+<hr class="devider">
+<h2>5. Average Waiting Time for a Revision to Get Build Result Per Active Builder
+(Response Time)</h2>
+<p class="small"><b>Period:</b> May 10, 2020 – June 6, 2020 (<b>May 2020</b>) <i>VS</i> June 7, 2020 – July 4, 2020 (<b>June 2020</b>)</p>
+<iframe width="800" height="450" src="https://datastudio.google.com/embed/reporting/5670fd5d-61f9-4e8a-a2f8-ee3fccbba051/page/3ZfaB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<hr class="devider">
+<p>Response time fall significantly for the following builders in June compared to May 2020:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Avg Wait Time, May 2020</th>
+<th>Avg Wait Time, June 2020</th>
+<th>Change (%)</th>
+	</tr>
+	<tr>
+<td>clang-cmake-armv7-quick</td>
+<td>00:35:25</td>
+<td>02:15:52</td>
+<td>+283.6 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>llvm-avr-linux</td>
+<td>00:39:37</td>
+<td>01:21:30</td>
+<td>+105.7 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>mlir-nvidia</td>
+<td>03:14:13</td>
+<td>06:02:01</td>
+<td>+86.4 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>clang-ppc64le-linux-lnt</td>
+<td>02:31:24</td>
+<td>04:34:33</td>
+<td>+81.3 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-aarch64-quick</td>
+<td>01:41:42</td>
+<td>03:04:02</td>
+<td>+81 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux-noexceptions</td>
+<td>03:55:51</td>
+<td>06:44:45</td>
+<td>+71.6 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-libunwind-aarch64-linux-noexceptions</td>
+<td>04:13:10</td>
+<td>07:00:59</td>
+<td>+66.3 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>clang-aarch64-linux-build-cache</td>
+<td>01:37:06</td>
+<td>02:37:29</td>
+<td>+62.2 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+	<tr>
+<td>libcxx-libcxxabi-libunwind-armv8-linux</td>
+<td>04:06:38</td>
+<td>06:17:31</td>
+<td>+53.1 <span style="color:#f44336">&#8593;</span></td>
+	</tr>
+</table>
+
+<hr class="devider">
+<p>The following builders had the highest response time improvement during the same period:</p>
+
+<table style="width:100%">
+	<tr>
+<th>Builder Name</th>
+<th>Avg Wait Time, May 2020</th>
+<th>Avg Wait Time, June 2020</th>
+<th>Change (%)</th>
+	</tr>
+	<tr>
+<td>clang-ppc64le-rhel</td>
+<td>04:43:11</td>
+<td>00:27:38</td>
+<td>-90 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>ppc64le-lld-multistage-test</td>
+<td>06:09:21</td>
+<td>01:35:36</td>
+<td>-74 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>lldb-aarch64-ubuntu</td>
+<td>01:14:54</td>
+<td>00:26:31</td>
+<td>-65 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>clang-cmake-x86_64-sde-avx512-linux</td>
+<td>00:17:28</td>
+<td>00:08:16</td>
+<td>-53 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>openmp-clang-x86_64-linux-debian</td>
+<td>00:08:34</td>
+<td>00:04:51</td>
+<td>-43 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>flang-aarch64-ubuntu</td>
+<td>01:29:35</td>
+<td>00:52:21</td>
+<td>-42 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>lldb-arm-ubuntu</td>
+<td>01:41:39</td>
+<td>01:09:08</td>
+<td>-32 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>sanitizer-ppc64le-linux</td>
+<td>07:04:47</td>
+<td>05:15:33</td>
+<td>-26 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+	<tr>
+<td>llvm-sphinx-docs</td>
+<td>00:03:10</td>
+<td>00:02:22</td>
+<td>-25 <span style="color:#36F585">&#8595;</span></td>
+	</tr>
+</table>
+
+<hr class="devider">
+</div>
+
+			
+			</div><!-- /.container -->
+			<footer>
+	    		<ul>
+				<li>Copyright © 2020 Access Softek</li>
+	        		<li><a href="mailto:clients@accesssoftek.com">Email</a></li>
+	        		<li><a href="https://www.accesssoftek.com/llvm">www.accesssoftek.com/llvm</a></li>
+				</ul>
+			</footer>
+		
+	
+</body></html>
